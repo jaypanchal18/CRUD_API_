@@ -5,12 +5,11 @@ app = Flask(__name__)
 # storing the data store
 items = []
 
-# display all items
+
 @app.route('/api/items', methods=['GET'])
 def get_items():
     return jsonify({'items': items})
 
-# create a new item
 @app.route('/api/items', methods=['POST'])
 def create_item():
     if not request.json or not 'name' in request.json:
